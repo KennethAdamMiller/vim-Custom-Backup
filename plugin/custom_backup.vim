@@ -6,7 +6,7 @@ endif
 function! s:ChangeBackupSettings()
 "the backupdir should be set to a recoverable, time based directory that reflects the 
 "file that was being edited
-  let &backupdir=$HOME . "/Dropbox/VIMBackups/" . strftime("%y%m%d") . "/" . expand("%:p:h")
+  let &backupdir=custom_backup_parent_dir . strftime("%y%m%d") . "/" . expand("%:p:h")
   let dir=&backupdir
   let &backupext ='.' . strftime("%H%M%S") . '.bak'
 

@@ -1,5 +1,5 @@
 function! ChangeFailSafeSettings()
-  let failsafedir= $HOME . "/Dropbox/VIMBackups/" . strftime("%y%m%d") .  expand("%:p:h")
+  let failsafedir= custom_backup_parent_dir . strftime("%y%m%d") .  expand("%:p:h")
   if ! filewritable(failsafedir)
     call mkdir(failsafedir, "p")
     if ! filewritable(failsafedir)
